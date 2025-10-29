@@ -1,17 +1,17 @@
 TCP SYN only
-hping3 -S -p 443 192.168.0.16
+sudo hping3 -c 1 -S -p 443 192.168.0.16
 
 TCP FIN only
-hping3 -F -p 443 192.168.0.16
+sudo hping3 -c 1 -F -p 443 192.168.0.16
 
 TCP PSH only
-hping3 -P -p 443 192.168.0.16
+sudo hping3 -c 1 -P -p 443 192.168.0.16
 
 TCP URG only
-hpin3 -U -p 443 192.168.0.16
+sudo hping3 -c 1 -U -p 443 192.168.0.16
 
 TCP RST only
-hping3 -R -p 443 192.168.0.16
+sudo hping3 -c 1 -R -p 443 192.168.0.16
 
 TCP XMAS
 hping -X -p 443 192.168.0.16
