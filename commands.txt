@@ -14,10 +14,10 @@ TCP RST only
 sudo hping3 -c 1 -R -p 8080 192.168.0.54
 
 TCP XMAS
-sudo hping3 -c 1 -FPU -p 8080 192.168.0.54
+sudo hping3 -c 1 -FPU -p 8082 192.168.0.54
 
 TCP FIN scan
-sudo hping3 -F --scan 8000-9000 192.168.0.54
+sudo hping3 -F --scan 7000-8000 192.168.0.54
 
 UDP flood
 sudo hping3 -2 -c 1000 -i u1 -p 8081 192.168.0.54
