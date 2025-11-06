@@ -25,10 +25,10 @@ alert udp any any -> $HOME_NET any (
     detection_filter: track by_src, count 1000, seconds 1;
 )
 
-# Reverse Shell block before connection established
-alert tcp any any -> any 8080 (
-    msg:"Reverse Shell outbound SYN";
-    flags:S;
+# Reverse Shell
+alert tcp any 8080 -> any any (
+    msg:"Reverse Shell incoming SYN-ACK";
+    flags:SA;
     sid:1000004;
     rev:1;
     classtype:attempted-admin;
